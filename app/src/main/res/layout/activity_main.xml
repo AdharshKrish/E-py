@@ -6,13 +6,101 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        app:barrierDirection="top"
+        tools:layout_editor_absoluteY="731dp" />
+
+    <ImageButton
+        android:id="@+id/image_Button_project"
+        android:layout_width="351dp"
+        android:layout_height="164dp"
+        android:layout_marginBottom="254dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/product"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/product" />
+
+    <ImageButton
+        android:id="@+id/image_Button_service"
+        android:layout_width="348dp"
+        android:layout_height="181dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/service"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_Button_project"
+        app:srcCompat="@drawable/service" />
+
+    <TextView
+        android:id="@+id/services"
+        android:layout_width="238dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="70dp"
+        android:accessibilityLiveRegion="polite"
+        android:fontFamily="monospace"
+        android:inputType="none"
+        android:text="@string/services"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_Button_project" />
+
+
+    <SearchView
+        android:id="@+id/search"
+        android:layout_width="261dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="650dp"
+        android:divider="@android:drawable/divider_horizontal_textfield"
+        android:inputType="text"
+        android:showDividers="beginning|end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/menu"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginBottom="650dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/menu"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+
+    <TextView
+        android:id="@+id/products"
+        android:layout_width="228dp"
+        android:layout_height="83dp"
+        android:layout_marginBottom="130dp"
+        android:fontFamily="monospace"
+        android:inputType="none"
+        android:text="@string/products"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@android:color/black"
+        android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@+id/services"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.633" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
