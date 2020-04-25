@@ -6,26 +6,38 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toolbar;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button service;
+    ImageButton product;
+    ImageButton service;
     Toolbar tb;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        service=findViewById(R.id.button2);
-        tb=findViewById(R.id.toolbar);
-//        tb.inflateMenu(R.menu.menu);
-        setActionBar(tb);
+        setSupportActionBar(findViewById(R.id.toolbar));
+        tb.inflateMenu(R.menu.menu);
+
+        product = findViewById((R.id.imageButtonProduct));
+        product.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, Page2Activity.class));
+            }
+        });
+
+        service = findViewById(R.id.imageButtonService);
         service.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this,Categories.class));
+                startActivity(new Intent(MainActivity.this, Page3Activity.class));
+            }
+        });
+
 
             }
         });
